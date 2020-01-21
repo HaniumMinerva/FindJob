@@ -74,7 +74,7 @@
         <p class="margin"><c:url value="/searchRecruitment" var="url"/><a class="menu" href="${url}">상세 검색 </a></p>
       </div>
       <div class="margin">
-        <p class="margin"><a class="menu" href="#">뉴스 </a></p>
+        <p class="margin"><c:url value="/streamRecruitment" var="url"/><a class="menu" href="${url}">채용 흐름 </a></p>
       </div>
     </div>
   </div>

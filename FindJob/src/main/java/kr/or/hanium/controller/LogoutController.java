@@ -38,8 +38,6 @@ public class LogoutController {
         model.addAttribute("recruitmentMainList",recruitmentList);
         model.addAttribute("companyMainList",companyList);
 
-        logger.info(companyList.toString());
-
         return "index";
     }
 }

@@ -74,7 +74,7 @@
                 <p class="margin"><c:url value="/searchRecruitment" var="url"/><a class="menu" href="${url}">상세 검색 </a></p>
             </div>
             <div class="margin">
-                <p class="margin"><a class="menu" href="#">뉴스 </a></p>
+                <p class="margin"><c:url value="/streamRecruitment" var="url"/><a class="menu" href="${url}">채용 흐름 </a></p>
             </div>
         </div>
     </div>
@@ -96,7 +96,7 @@
                     <td>&nbsp${recruitment.recruitment_form }</td>
                     <td>&nbsp${recruitment.start_day }</td>
                     <td>&nbsp${recruitment.finish_day }</td>
-                    <td>&nbsp${companyList[status.index].company_url }</td>
+                    <td><a href="${companyList[status.index].company_url}"/>&nbsp${companyList[status.index].company_url }</td>
                 </tr>
             </c:forEach>
         </table>

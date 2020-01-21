@@ -34,7 +34,6 @@ public class RecruitmentController {
         model.addAttribute("recruitmentList",recruitmentList);
         model.addAttribute("companyList", companyList);
 
-        logger.info(recruitmentList.toString());
         return "recruitment";
     }
 }

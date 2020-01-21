@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jangsohyeon
-  Date: 2020/01/05
-  Time: 10:33 오후
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" session="true"%>
@@ -80,7 +73,7 @@
         <p class="margin"><c:url value="/searchRecruitment" var="url"/><a class="menu" href="${url}">상세 검색 </a></p>
       </div>
       <div class="margin">
-        <p class="margin"><a class="menu" href="#">뉴스 </a></p>
+        <p class="margin"><c:url value="/streamRecruitment" var="url"/><a class="menu" href="${url}">채용 흐름 </a></p>
       </div>
     </div>
   </div>
@@ -107,6 +100,7 @@
     </div>
   </div>
 </section>
+<br>
 
 <!-- Footer -->
 <footer class="footer">

@@ -1,7 +1,5 @@
 package kr.or.hanium.controller;
 
-import kr.or.hanium.model.Company;
-import kr.or.hanium.model.Recruitment;
 import kr.or.hanium.model.SearchRecruitmentDTO;
 import kr.or.hanium.service.CompanyService;
 import kr.or.hanium.service.RecruitmentService;
@@ -12,10 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 @Controller
 @RequestMapping(value="/searchRecruitment")
@@ -34,22 +29,14 @@ public class SearchRecruitmentController {
         return "searchRecruitment";
     }
 
-    @PostMapping(value="")
-    public String postSearchRecruitment(@ModelAttribute(value="search") SearchRecruitmentDTO search, Model model) throws Exception {
+    @GetMapping(value="/result")
+    public String getResultSearchRecruitment(@ModelAttribute(value="search") SearchRecruitmentDTO search, Model model) throws Exception {
 
-        if(search.getWork_location().equals("전국")) { search.setWork_location(null); }
+        if(search.getWork_location().equals("전체") || search.getWork_location().equals(""))
+            model.addAttribute("All", search);
 
-        if(search.getRecruitment_school().equals("전체")) { search.setRecruitment_school(null); }
-
-        if(search.getCompany_scale().equals("전체")) { search.setCompany_scale(null); }
-
-        if(search.getRecruitment_form().equals("전체")) { search.setRecruitment_form(null); }
-
-        List<Recruitment> recruitmentList = recruitmentService.getSearchRecruitmentList(search);
-        List<Company> companyList = companyService.getSearchCompanyList(search);
-
-        model.addAttribute("searchRecruitmentList", recruitmentList);
-        model.addAttribute("searchCompanyList", companyList);
+        else
+            model.addAttribute("Part", search);
 
         return "searchRecruitment";
     }

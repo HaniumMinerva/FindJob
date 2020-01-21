@@ -11,6 +11,5 @@ public class SearchRecruitmentDTO {
 
     private String work_location;
     private String recruitment_school;
-    private String company_scale;
     private String recruitment_form;
 }
