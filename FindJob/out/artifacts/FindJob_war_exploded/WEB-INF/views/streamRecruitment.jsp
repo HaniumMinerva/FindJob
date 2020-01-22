@@ -84,7 +84,8 @@
 
 <br>
 <center>
-    <h4 class="mb-3">채용흐름 </h4>
+    <h4 class="mb-3">채용 흐름 </h4>
+    <br>
     <div class="container">
         <div class = "row">
             <div class="col-md-6">

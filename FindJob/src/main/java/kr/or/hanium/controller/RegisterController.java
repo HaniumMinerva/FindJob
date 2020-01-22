@@ -39,19 +39,13 @@ public class RegisterController {
     }
 
     @PostMapping(value = "")
-    public String registerUserPost(@ModelAttribute("user") @Valid User user, BindingResult bindingResult, Model model) throws Exception
+    public String registerUserPost(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) throws Exception
     {
         if (bindingResult.hasErrors())
             return "registerUser";
 
         user.setAuthority("ROLE_USER");
         userService.addUser(user);
-
-        List<Recruitment> recruitmentList = recruitmentService.getRecruitmentMainList();
-        List<Company> companyList = companyService.getCompanyMainList();
-
-        model.addAttribute("recruitmentMainList",recruitmentList);
-        model.addAttribute("companyMainList",companyList);
 
         return "redirect:/";
     }

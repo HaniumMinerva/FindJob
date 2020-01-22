@@ -28,16 +28,10 @@ public class LogoutController {
     private static final Logger logger = LoggerFactory.getLogger(LogoutController.class);
 
     @GetMapping(value="")
-    public String logout(HttpSession httpSession, Model model) throws Exception
+    public String logout(HttpSession httpSession) throws Exception
     {
         httpSession.invalidate();
 
-        List<Recruitment> recruitmentList = recruitmentService.getRecruitmentMainList();
-        List<Company> companyList = companyService.getCompanyMainList();
-
-        model.addAttribute("recruitmentMainList",recruitmentList);
-        model.addAttribute("companyMainList",companyList);
-
-        return "index";
+        return "redirect:/";
     }
 }
