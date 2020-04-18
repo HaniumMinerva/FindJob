@@ -1,4 +1,5 @@
 # 웹 크롤링 기반 채용 공고 분석 시스템 개발
+*written by sohyeon 💡*
 
 <br>
 
