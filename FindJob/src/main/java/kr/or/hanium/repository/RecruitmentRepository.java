@@ -24,7 +24,7 @@ public class RecruitmentRepository {
         return sqlSession.selectList(namespace + ".selectMain");
     }
 
-    public List<Recruitment> getSearchRecruitmentList(SearchRecruitmentDTO search) throws Exception {
+    public List<SearchRecruitmentDTO> getSearchRecruitmentList(SearchRecruitmentDTO search) throws Exception {
         return sqlSession.selectList(namespace + ".selectSearch", search);
     }
 }

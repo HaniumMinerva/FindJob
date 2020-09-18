@@ -22,7 +22,7 @@ public class RecruitmentService {
         return recruitmentRepository.getRecruitmentMainList();
     }
 
-    public List<Recruitment> getSearchRecruitmentList(SearchRecruitmentDTO search) throws Exception {
+    public List<SearchRecruitmentDTO> getSearchRecruitmentList(SearchRecruitmentDTO search) throws Exception {
         return recruitmentRepository.getSearchRecruitmentList(search);
     }
 }

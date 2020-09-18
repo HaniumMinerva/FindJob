@@ -19,9 +19,6 @@ public class SearchRecruitmentController {
     @Autowired
     private RecruitmentService recruitmentService;
 
-    @Autowired
-    private CompanyService companyService;
-
     private static final Logger logger = LoggerFactory.getLogger(SearchRecruitmentController.class);
 
     @GetMapping(value="")
@@ -35,8 +32,13 @@ public class SearchRecruitmentController {
         if(search.getWork_location().equals("전체") || search.getWork_location().equals(""))
             model.addAttribute("All", search);
 
-        else
-            model.addAttribute("Part", search);
+        else {
+            result = recruitmentService.getSearchRecruitmentList(search);
+            if result.getWork_location().equals("")
+                model.addAttribute("All", search);
+            else:
+                model.addAttribute("Part", search);
+        }
 
         return "searchRecruitment";
     }

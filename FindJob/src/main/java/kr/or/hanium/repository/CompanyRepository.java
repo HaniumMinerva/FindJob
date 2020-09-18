@@ -23,8 +23,4 @@ public class CompanyRepository {
     public List<Company> getCompanyMainList() throws Exception {
         return sqlSession.selectList(namespace + ".selectMain");
     }
-
-    public List<Company> getSearchCompanyList(SearchRecruitmentDTO search) throws Exception {
-        return sqlSession.selectList(namespace + ".selectSearch", search);
-    }
 }

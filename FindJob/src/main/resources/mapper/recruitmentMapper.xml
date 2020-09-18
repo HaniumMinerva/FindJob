@@ -12,22 +12,10 @@
 		select * from hanium.Company, hanium.recruitment where Company.company_id=recruitment.company_id and company_scale='대기업';
 	</select>
 
-	<select id="selectSearch" resultType="kr.or.hanium.model.Recruitment">
-		select * from hanium.Company, hanium.recruitment where Company.company_id=recruitment.company_id
+	<select id="selectSearch" resultType="kr.or.hanium.model.SearchRecruitmentDTO">
+		select work_location, recruitment_school, recruitment_form from hanium.Company, hanium.recruitment where Company.company_id=recruitment.company_id
 		<if test="work_location != null">
 			AND work_location like CONCAT('%',#{work_location},'%')
-		</if>
-
-		<if test="recruitment_school != null">
-			AND recruitment_school like CONCAT('%',#{recruitment_school},'%')
-		</if>
-
-		<if test="company_scale != null">
-			AND company_scale like CONCAT('%',#{company_scale},'%')
-		</if>
-
-		<if test="recruitment_form != null">
-			AND recruitment_form like CONCAT('%',#{recruitment_form},'%')
 		</if>
 	</select>
 </mapper>

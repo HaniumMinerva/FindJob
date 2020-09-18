@@ -23,8 +23,4 @@ public class CompanyService {
     public List<Company> getCompanyMainList() throws Exception {
         return companyRepository.getCompanyMainList();
     }
-
-    public List<Company> getSearchCompanyList(SearchRecruitmentDTO search) throws Exception {
-        return companyRepository.getSearchCompanyList(search);
-    }
 }
